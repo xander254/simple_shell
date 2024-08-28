@@ -18,7 +18,6 @@ void parse_input(char *line, char **argv, int *argc)
 	token = strtok(line, delim);
 	while (token)
 	{
-		free(token);
 		argv[*argc] = token;
 		(*argc)++;
 		token = strtok(NULL, delim);
