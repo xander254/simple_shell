@@ -1,18 +1,22 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
 #include <sys/wait.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <sys/stat.h>
 #include <errno.h>
 
+#define BUFFER 1024
 
-ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-ssize_t string_rm_newline(const char *str1, const char *str2);
-int _putchar(char c);
-void print_string(char *str);
+extern char **environ;
+
+int main(void);
+void parse_input(char *line, char **argv, int *argc);
+void execute_command(char **argv);
+
 #endif /* MAIN_H */
+
